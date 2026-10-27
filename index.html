@@ -1,0 +1,445 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="description" content="A HAJA produz vídeos e fotografias para construtoras e imobiliárias. Do stand de vendas à entrega da obra.">
+<meta property="og:title" content="HAJA Imobiliário">
+<meta property="og:description" content="Vídeos e fotografias para construtoras e imobiliárias.">
+<meta property="og:image" content="capas/stand.jpg">
+<style>body{margin:0}img{max-width:100%}[hidden]{display:none!important}</style>
+<title>HAJA Imobiliário</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap">
+<style>
+/* Layout: mesmo palco escuro do site HAJA — foto de imóvel no topo, apresentação curta, depois o portfólio serviço a serviço, faixa creme para fotografia */
+:root{
+  --bg:#0a0a0a;
+  --panel:#151413;
+  --panel-2:#1d1b19;
+  --line:#2c2926;
+  --fg:#f3efe8;
+  --muted:#a39d94;
+  --cream:#fdf3df;
+  --ink:#141210;
+  --ink-soft:#4a443d;
+  --display:"Poppins",ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
+  --body:"Poppins",ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
+  color-scheme:dark;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--fg);font-family:var(--body);font-size:16px;line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+a{color:inherit}
+.wrap{max-width:1120px;margin-inline:auto;padding-left:max(20px,env(safe-area-inset-left,0px));padding-right:max(20px,env(safe-area-inset-right,0px))}
+h1,h2,h3{font-family:var(--display);font-weight:300;text-transform:uppercase;letter-spacing:.01em;line-height:1.08;margin:0;text-wrap:balance}
+p{margin:0}
+.eyebrow{font-size:11px;letter-spacing:.42em;text-transform:uppercase;color:var(--muted);display:flex;align-items:center;gap:12px}
+.eyebrow::before,.eyebrow::after{content:"";width:16px;height:1px;background:currentColor}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;border-radius:999px;padding:14px 26px;font:500 15px/1 var(--body);text-decoration:none;cursor:pointer;border:1px solid transparent;transition:transform .2s ease,background .2s ease,border-color .2s ease;position:relative;overflow:hidden}
+.btn-cream{background:var(--cream);color:var(--ink)}
+.btn-cream:hover{transform:translateY(-2px)}
+.btn-cream::after{content:"";position:absolute;top:0;bottom:0;width:40%;left:-60%;background:linear-gradient(100deg,transparent,rgba(255,255,255,.65),transparent);transform:skewX(-20deg);transition:left .7s ease}
+.btn-cream:hover::after{left:130%}
+.btn-ghost{border-color:rgba(243,239,232,.4);color:var(--fg);background:transparent}
+.btn-ghost:hover{border-color:var(--fg)}
+.btn:focus-visible,button:focus-visible,a:focus-visible{outline:2px solid var(--cream);outline-offset:3px}
+
+.logo{display:inline-flex;align-items:flex-start;gap:2px;font:700 26px/1 var(--display);letter-spacing:.01em;color:var(--fg);text-decoration:none}
+.logo svg{width:18px;height:18px;margin-top:-6px;margin-left:-4px;fill:currentColor}
+
+/* topo */
+.hero{position:relative;isolation:isolate;overflow:hidden;background:var(--bg)}
+.hero-bg{position:absolute;inset:0;z-index:-2;background:url(fotos/0Z9A4856.jpg) center 45%/cover no-repeat}
+.hero::after{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(90deg,rgba(10,10,10,.92) 0%,rgba(10,10,10,.72) 55%,rgba(10,10,10,.55) 100%),linear-gradient(0deg,var(--bg) 0%,rgba(10,10,10,0) 40%)}
+.nav .wrap{display:flex;align-items:center;justify-content:space-between;gap:16px;padding-block:22px}
+.nav .btn{padding:10px 18px;font-size:13px}
+.hero-body{padding-block:80px 110px;display:grid;gap:26px}
+.hero h1{font-size:clamp(34px,5.6vw,70px);max-width:18ch}
+.entrega{display:grid;gap:12px;margin-top:18px;padding-top:22px;border-top:1px solid rgba(243,239,232,.18);max-width:760px}
+.entrega-label{font-size:11px;letter-spacing:.42em;text-transform:uppercase;color:var(--muted)}
+.entrega .hero-meta{margin-top:0}
+.hero-body{padding-block:64px 44px}
+.scroll-cue{display:inline-flex;align-items:center;gap:14px;margin-top:20px;font-size:13px;color:var(--cream);text-decoration:none;justify-self:start}
+.scroll-cue:hover{color:var(--fg)}
+.mouse{flex:none;width:22px;height:34px;border:1.5px solid currentColor;border-radius:12px;position:relative}
+.mouse::after{content:"";position:absolute;left:50%;top:7px;width:3px;height:7px;margin-left:-1.5px;border-radius:2px;background:currentColor;animation:wheel 1.6s ease-in-out infinite}
+@keyframes wheel{0%{opacity:0;transform:translateY(-3px)}40%{opacity:1}100%{opacity:0;transform:translateY(9px)}}
+.ola{padding-block:28px 8px}
+.ola-grid{grid-template-columns:minmax(0,1fr) 200px;gap:32px;align-items:center;border:1px solid var(--line);border-radius:20px;padding:24px 24px 24px 32px;background:var(--panel);max-width:860px;margin-inline:auto}
+.ola .head{gap:12px}
+.ola .head h2{font-size:clamp(24px,3vw,34px)}
+.founders{aspect-ratio:1;max-height:200px;border-radius:14px}
+.founders figcaption{padding:28px 12px 10px;font-size:9px;letter-spacing:.24em}
+#trabalhos{padding-top:72px}
+.ola-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.25fr);gap:32px;align-items:center;max-width:none;padding:28px}
+.team{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px}
+.team figure{margin:0;position:relative;border-radius:14px;overflow:hidden;aspect-ratio:1;max-width:100%;background:var(--panel-2)}
+.team img{width:100%;height:100%;object-fit:cover;display:block}
+.team figcaption{position:absolute;left:0;right:0;bottom:0;padding:26px 10px 9px;background:linear-gradient(0deg,rgba(10,10,10,.85),rgba(10,10,10,0));font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--fg)}
+.hero .sub{font-size:clamp(16px,1.6vw,19px);color:#e6e0d6;max-width:48ch;font-weight:300}
+.hero .sub strong{font-weight:500;color:var(--fg)}
+.actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:4px}
+.hero-meta{display:flex;flex-wrap:wrap;gap:10px 28px;margin-top:18px;font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:#cfc8bd}
+.hero-meta a{display:flex;align-items:center;gap:8px;text-decoration:none}
+.hero-meta a::before{content:"";width:6px;height:6px;border-radius:50%;background:var(--cream)}
+.hero-meta a:hover{color:var(--fg)}
+
+section{padding-block:96px}
+.head{display:grid;gap:18px;margin-bottom:44px;max-width:660px}
+.head h2{font-size:clamp(30px,4.4vw,50px)}
+.head p{color:var(--muted);max-width:54ch}
+
+/* olá */
+.ola{padding-bottom:40px}
+.ola .head{margin-bottom:0}
+.ola .head p+p{color:var(--fg)}
+.founders{position:relative;border-radius:20px;overflow:hidden;aspect-ratio:4/5;max-width:100%;max-height:520px;justify-self:end;width:100%}
+.founders img{width:100%;height:100%;object-fit:cover;object-position:50% 25%;display:block;filter:grayscale(.35)}
+.founders figcaption{position:absolute;left:0;right:0;bottom:0;padding:40px 20px 18px;background:linear-gradient(0deg,rgba(10,10,10,.85),rgba(10,10,10,0));font-size:11px;letter-spacing:.3em;text-transform:uppercase;color:#d8d1c6}
+
+/* portfólio */
+.svc{display:grid;gap:16px}
+.case{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:0;border:1px solid var(--line);border-radius:20px;overflow:hidden;background:var(--panel)}
+.case + .case{margin-top:0}
+.media{position:relative;background:#000;min-width:0}
+.media video{display:block;width:100%;height:100%;object-fit:cover;background:#000}
+.case.wide{grid-template-columns:minmax(0,1.55fr) minmax(0,1fr)}
+.case.wide .media video{aspect-ratio:16/9;max-width:100%}
+.case.tall .media{display:grid;place-items:center;padding:22px;background:var(--panel-2)}
+.case.tall .media video{aspect-ratio:9/16;max-width:100%;max-height:620px;width:auto;height:auto;border-radius:14px}
+.play{position:absolute;inset:0;display:grid;place-items:center;background:transparent;border:0;cursor:pointer;padding:0}
+.play span{width:72px;height:72px;border-radius:50%;background:rgba(253,243,223,.92);display:grid;place-items:center;box-shadow:0 10px 30px rgba(0,0,0,.45);transition:transform .25s}
+.play span::after{content:"";border-left:18px solid var(--ink);border-top:11px solid transparent;border-bottom:11px solid transparent;margin-left:5px}
+.play:hover span{transform:scale(1.08)}
+.copy{padding:36px 32px;display:grid;gap:16px;align-content:center;min-width:0}
+.copy small{font-size:11px;letter-spacing:.3em;text-transform:uppercase;color:var(--muted)}
+.copy h3{font-size:clamp(24px,2.6vw,32px)}
+.copy p{color:#d6cfc4;max-width:44ch}
+.uses{display:flex;flex-wrap:wrap;gap:8px;margin:4px 0 0;padding:0}
+.uses li{list-style:none;font-size:12px;letter-spacing:.06em;border:1px solid var(--line);border-radius:999px;padding:6px 12px;color:var(--muted)}
+.duo-cases{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
+.duo-cases .case{grid-template-columns:minmax(0,1fr)}
+.duo-cases .copy{padding:26px 26px 30px;align-content:start}
+
+/* fotografia (faixa creme) */
+#fotografia{background:var(--cream);color:var(--ink)}
+#fotografia .eyebrow{color:#6b6359}
+#fotografia .head p{color:var(--ink-soft)}
+.foto-top{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:48px;align-items:end;margin-bottom:36px}
+.foto-top .head{margin-bottom:0}
+.foto-top .uses li{border-color:rgba(20,18,16,.2);color:var(--ink-soft)}
+.gallery{columns:3;column-gap:10px}
+.gallery button{display:block;width:100%;break-inside:avoid;border:0;padding:0;margin:0 0 10px;border-radius:12px;overflow:hidden;cursor:zoom-in;background:#e8ddc8;min-width:0}
+.gallery img{width:100%;height:auto;display:block;transition:transform 1s cubic-bezier(.2,.7,.2,1)}
+.gallery button:hover img{transform:scale(1.05)}
+
+.lb{position:fixed;inset:0;z-index:50;background:rgba(10,10,10,.94);display:grid;place-items:center;padding:max(20px,env(safe-area-inset-top,0px)) max(20px,env(safe-area-inset-right,0px)) max(20px,env(safe-area-inset-bottom,0px)) max(20px,env(safe-area-inset-left,0px))}
+.lb[hidden]{display:none}
+.lb img{max-width:100%;max-height:88vh;border-radius:10px;display:block}
+.lb button{position:absolute;background:rgba(243,239,232,.12);color:var(--fg);border:1px solid rgba(243,239,232,.3);border-radius:999px;width:46px;height:46px;font:300 22px/1 var(--body);cursor:pointer}
+.lb .x{top:calc(18px + env(safe-area-inset-top,0px));right:calc(18px + env(safe-area-inset-right,0px))}
+.lb .pv{left:calc(14px + env(safe-area-inset-left,0px));top:50%;translate:0 -50%}
+.lb .nx{right:calc(14px + env(safe-area-inset-right,0px));top:50%;translate:0 -50%}
+
+/* contato */
+.contato{position:relative;background:var(--panel)}
+.contato .wrap{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:56px;align-items:center}
+.contato .head{margin-bottom:0}
+.contato .head h2{font-size:clamp(32px,4.8vw,56px)}
+.cta-box{display:grid;gap:14px;background:var(--bg);border:1px solid var(--line);border-radius:20px;padding:32px}
+.cta-box .btn{width:100%;padding:18px;font-size:16px}
+.num{font-size:14px;color:var(--muted)}
+.num b{color:var(--fg);font-weight:500;user-select:all}
+.copy-num{background:none;border:0;color:var(--cream);font:500 13px var(--body);text-decoration:underline;cursor:pointer;padding:0;margin-left:6px}
+
+footer{position:relative;overflow:hidden;border-top:1px solid var(--line)}
+footer canvas{position:absolute;inset:0;width:100%;height:100%;opacity:.4;pointer-events:none}
+footer .wrap{position:relative;padding-block:64px 36px;display:grid;gap:40px}
+.f-top{display:grid;grid-template-columns:minmax(0,1.4fr) minmax(0,1fr) minmax(0,1fr);gap:40px}
+.f-top .logo{font-size:34px}
+.f-top .logo svg{width:22px;height:22px}
+.f-top p{color:var(--muted);margin-top:16px;max-width:36ch;font-size:15px}
+.f-col{display:grid;gap:10px;align-content:start;font-size:15px}
+.f-col h4{margin:0 0 6px;font-size:11px;letter-spacing:.3em;text-transform:uppercase;color:var(--muted);font-weight:500}
+.f-col a{text-decoration:none;color:#ddd6cb}
+.f-col a:hover{color:var(--fg)}
+.f-bottom{display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;font-size:12px;color:#7d776f;border-top:1px solid var(--line);padding-top:22px}
+
+.progress{position:fixed;top:0;bottom:0;right:0;width:3px;z-index:31;background:var(--cream);transform-origin:50% 0;transform:scaleY(0);pointer-events:none}
+
+/* animações */
+.js .hero-bg{animation:heroZoom 2.4s cubic-bezier(.2,.7,.2,1) both}
+@keyframes heroZoom{from{transform:scale(1.1);filter:brightness(.6)}to{transform:none;filter:none}}
+.js .hero-body > *{animation:fadeUp .9s cubic-bezier(.2,.7,.2,1) both}
+.js .hero-body > :nth-child(2){animation-delay:.15s}
+.js .hero-body > :nth-child(3){animation-delay:.3s}
+.js .hero-body > :nth-child(4){animation-delay:.45s}
+.js .hero-body > :nth-child(5){animation-delay:.6s}
+@keyframes fadeUp{from{opacity:.001;transform:translateY(20px)}to{opacity:1;transform:none}}
+.rv{transition:opacity .9s cubic-bezier(.2,.7,.2,1),transform .9s cubic-bezier(.2,.7,.2,1)}
+.js .rv.pre{opacity:.15;transform:translateY(24px)}
+
+@media (max-width:900px){
+  .contato .wrap,.f-top,.foto-top{grid-template-columns:minmax(0,1fr)}
+  .case.wide{grid-template-columns:minmax(0,1fr)}
+  .gallery{columns:2}
+}
+@media (max-width:620px){
+  section{padding-block:72px}
+  .hero-body{padding-block:36px 36px}
+  .ola-grid{grid-template-columns:minmax(0,1fr);gap:20px;padding:20px}
+  .team{gap:6px}
+  .team figcaption{font-size:8px;letter-spacing:.12em;padding:20px 7px 7px}
+  .eyebrow{letter-spacing:.26em}
+  #trabalhos{padding-top:56px}
+  .hero h1{font-size:32px}
+  .hero .eyebrow{letter-spacing:.22em;font-size:10px}
+  .hero .eyebrow::after{display:none}
+  .actions .btn{flex:1 1 100%}
+  .nav .btn{padding:9px 14px;font-size:12px}
+  .duo-cases{grid-template-columns:minmax(0,1fr)}
+  .copy{padding:26px 22px}
+  .case.tall .media{padding:14px}
+  .case.tall .media video{max-height:560px}
+  .gallery{column-gap:6px}
+  .gallery button{margin-bottom:6px}
+  .cta-box{padding:22px}
+  .f-bottom{flex-direction:column}
+}
+@media (prefers-reduced-motion:reduce){
+  *{animation:none!important;transition:none!important;scroll-behavior:auto!important}
+  .js .rv.pre{opacity:1;transform:none}
+}
+</style>
+
+</head>
+<body>
+<div class="progress" id="progress" aria-hidden="true"></div>
+
+<header class="hero" id="topo">
+  <div class="hero-bg" role="img" aria-label="Sala de apartamento decorado fotografada pela HAJA"></div>
+  <nav class="nav">
+    <div class="wrap">
+      <a class="logo" href="#topo" aria-label="HAJA">HAJA<svg viewBox="0 0 100 100" aria-hidden="true"><path d="M50 0Q56 44 100 50Q56 56 50 100Q44 56 0 50Q44 44 50 0Z"/></svg></a>
+    </div>
+  </nav>
+  <div class="wrap hero-body">
+    <div class="eyebrow">Conteúdo imobiliário · SP | RJ</div>
+    <h1>A HAJA produz vídeos e fotografias para construtoras e imobiliárias.</h1>
+    <p class="sub">Do stand de vendas à entrega da obra.</p>
+    <div class="entrega">
+      <div class="entrega-label">Nossas soluções</div>
+      <div class="hero-meta">
+      <a href="#stand">Apresentação de stand</a>
+      <a href="#obra">Acompanhamento de obra</a>
+      <a href="#eventos">Cobertura de eventos</a>
+      <a href="#fotografia">Fotografia do imóvel</a>
+      </div>
+    </div>
+    <a class="scroll-cue" href="#haja"><span class="mouse" aria-hidden="true"></span>Deslize para conhecer nossa equipe e nossos projetos</a>
+  </div>
+</header>
+
+<main>
+  <section class="ola" id="haja">
+    <div class="wrap"><div class="ola-grid">
+      <div class="head rv">
+        <div class="eyebrow">Quem somos</div>
+        <h2>Produtora de performance de conteúdo.</h2>
+        <p>Uma equipe completa de vídeo, fotografia e imagens aéreas, do roteiro à edição final. Cada entrega é pensada para valorizar o empreendimento e aproximar o cliente da decisão de compra.</p>
+      </div>
+      <div class="team rv" aria-label="Equipe HAJA em campo">
+        <figure><img src="capas/equipe-drone.jpg" alt="Integrante da equipe HAJA lançando um drone no alto de um empreendimento"><figcaption>Imagens aéreas</figcaption></figure>
+        <figure><img src="capas/equipe-video.jpg" alt="Videomaker da HAJA com câmera e estabilizador em frente a um condomínio"><figcaption>Vídeo</figcaption></figure>
+        <figure><img src="capas/equipe-foto.jpg" alt="Fotógrafo da HAJA ajustando a câmera no tripé"><figcaption>Fotografia</figcaption></figure>
+      </div>
+    </div></div>
+  </section>
+
+  <section id="trabalhos">
+    <div class="wrap">
+      <div class="head rv">
+        <div class="eyebrow">Portfólio</div>
+        <h2>Projetos realizados.</h2>
+        <p>Produções desenvolvidas para a Alpha Vert. Toque no play para assistir.</p>
+      </div>
+
+      <div class="svc">
+        <article class="case wide rv" id="stand">
+          <div class="media">
+            <video src="videos/stand.mp4" poster="capas/stand.jpg" preload="none" playsinline controls aria-label="Vídeo de apresentação do stand Alpha Vert"></video>
+            <button class="play" type="button" aria-label="Assistir apresentação de stand"><span></span></button>
+          </div>
+          <div class="copy">
+            <small>Alpha Vert · Vídeo horizontal</small>
+            <h3>Apresentação de stand</h3>
+            <p>Um tour conduzido pelo stand de vendas que apresenta o empreendimento, os ambientes decorados e seus diferenciais. O cliente conhece o projeto antes mesmo da visita presencial.</p>
+            <ul class="uses"><li>Anúncios</li><li>Redes sociais</li><li>Atendimento do corretor</li></ul>
+          </div>
+        </article>
+
+        <div class="duo-cases">
+          <article class="case tall rv" id="obra">
+            <div class="media">
+              <video src="videos/obra.mp4" poster="capas/obra.jpg" preload="none" playsinline controls aria-label="Vídeo de acompanhamento de obra Alpha Vert"></video>
+              <button class="play" type="button" aria-label="Assistir acompanhamento de obra"><span></span></button>
+            </div>
+            <div class="copy">
+              <small>Alpha Vert · Vídeo vertical</small>
+              <h3>Acompanhamento de obra</h3>
+              <p>Registro contínuo da evolução da obra, etapa por etapa. Transmite transparência a quem já adquiriu a unidade e credibilidade a quem avalia a compra.</p>
+              <ul class="uses"><li>Reels e Stories</li><li>Relacionamento com o comprador</li></ul>
+            </div>
+          </article>
+
+          <article class="case tall rv" id="eventos">
+            <div class="media">
+              <video src="videos/eventos.mp4" poster="capas/eventos.jpg" preload="none" playsinline controls aria-label="Vídeo de cobertura de evento Alpha Vert"></video>
+              <button class="play" type="button" aria-label="Assistir cobertura de eventos"><span></span></button>
+            </div>
+            <div class="copy">
+              <small>Alpha Vert · Vídeo vertical</small>
+              <h3>Cobertura de eventos</h3>
+              <p>Cobertura completa de lançamentos, coquetéis e eventos no stand. Registramos a atmosfera, o público e os detalhes, transformando cada evento em conteúdo que reforça o prestígio do empreendimento.</p>
+              <ul class="uses"><li>Lançamentos</li><li>Eventos no stand</li><li>Redes sociais</li></ul>
+            </div>
+          </article>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="fotografia">
+    <div class="wrap">
+      <div class="foto-top">
+        <div class="head rv">
+          <div class="eyebrow">Fotografia</div>
+          <h2>Fotografia do imóvel.</h2>
+          <p>Imagens profissionais de cada ambiente, com iluminação e enquadramento que valorizam o espaço. Indicadas para decorados, unidades prontas, venda e locação.</p>
+        </div>
+        <ul class="uses rv"><li>Portais imobiliários</li><li>Anúncios</li><li>Book do imóvel</li><li>Redes sociais</li></ul>
+      </div>
+      <div class="gallery" id="gallery">
+        <button class="w" type="button" data-i="0"><img src="fotos/0Z9A4832.jpg" alt="Sala de estar com poltronas laranja e painel de madeira" ></button>
+        <button class="t" type="button" data-i="1"><img src="fotos/0Z9A4835.jpg" alt="Lavabo com bancada de pedra e metais pretos" ></button>
+        <button class="t" type="button" data-i="2"><img src="fotos/0Z9A4837.jpg" alt="Bancada de pedra com parede verde ao fundo" ></button>
+        <button type="button" data-i="3"><img src="fotos/0Z9A4848.jpg" alt="Quarto de casal com cabeceira estofada" ></button>
+        <button class="t" type="button" data-i="4"><img src="fotos/0Z9A4850.jpg" alt="Quarto com parede de papel listrado e cama azul" ></button>
+        <button type="button" data-i="5"><img src="fotos/0Z9A4853.jpg" alt="Quarto infantil em tons de rosa" ></button>
+        <button class="t" type="button" data-i="6"><img src="fotos/0Z9A4855.jpg" alt="Banheiro com bancada de madeira e espelho" ></button>
+        <button class="w" type="button" data-i="7"><img src="fotos/0Z9A4856.jpg" alt="Sala ampla com sofá e luz natural" ></button>
+      </div>
+    </div>
+  </section>
+
+  <section class="contato" id="contato">
+    <div class="wrap">
+      <div class="head rv">
+        <div class="eyebrow">Contato</div>
+        <h2>Vamos apresentar o seu próximo empreendimento?</h2>
+        <p>Fale com a HAJA pelo WhatsApp. Conte sobre o seu projeto e receba uma proposta sob medida para a sua construtora ou imobiliária.</p>
+      </div>
+      <div class="cta-box rv">
+        <a class="btn btn-cream wa-link" href="#contato" target="_blank" rel="noopener">Falar com a HAJA no WhatsApp</a>
+        <p class="num">WhatsApp <b id="num">+55 11 91419-1009</b><button class="copy-num" type="button" id="copyNum">Copiar</button></p>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <canvas id="waves" aria-hidden="true"></canvas>
+  <div class="wrap">
+    <div class="f-top">
+      <div>
+        <a class="logo" href="#topo" aria-label="HAJA">HAJA<svg viewBox="0 0 100 100" aria-hidden="true"><path d="M50 0Q56 44 100 50Q56 56 50 100Q44 56 0 50Q44 44 50 0Z"/></svg></a>
+        <p>Vídeo, fotografia e imagens aéreas para construtoras e imobiliárias.</p>
+      </div>
+      <div class="f-col">
+        <h4>Serviços</h4>
+        <a href="#stand">Apresentação de stand</a>
+        <a href="#obra">Acompanhamento de obra</a>
+        <a href="#eventos">Cobertura de eventos</a>
+        <a href="#fotografia">Fotografia do imóvel</a>
+      </div>
+      <div class="f-col">
+        <h4>Contato</h4>
+        <a class="wa-link" href="#contato" target="_blank" rel="noopener">WhatsApp +55 11 91419-1009</a>
+        <a href="https://www.instagram.com/haja.visual/" target="_blank" rel="noopener">Instagram @haja.visual</a>
+        <span style="color:#ddd6cb">São Paulo | Rio de Janeiro</span>
+      </div>
+    </div>
+    <div class="f-bottom"><span>© 2026 HAJA Visual</span><span>Produtora de performance de conteúdo</span></div>
+  </div>
+</footer>
+
+<div class="lb" id="lb" hidden role="dialog" aria-modal="true" aria-label="Foto ampliada">
+  <img id="lbImg" alt="">
+  <button class="x" type="button" id="lbX" aria-label="Fechar">×</button>
+  <button class="pv" type="button" id="lbP" aria-label="Foto anterior">‹</button>
+  <button class="nx" type="button" id="lbN" aria-label="Próxima foto">›</button>
+</div>
+
+<script>
+(function(){
+  var msg="Olá, Ana! Vi o site da HAJA para imobiliárias e quero saber mais sobre os conteúdos para imóveis e empreendimentos.";
+  var wa="https://wa.me/5511914191009?text="+encodeURIComponent(msg);
+  document.querySelectorAll(".wa-link").forEach(function(a){a.href=wa;});
+
+  var cb=document.getElementById("copyNum");
+  cb.addEventListener("click",function(){
+    var t="+5511914191009";
+    function sel(){var r=document.createRange();r.selectNodeContents(document.getElementById("num"));var s=getSelection();s.removeAllRanges();s.addRange(r);cb.textContent="Selecionado";}
+    try{navigator.clipboard.writeText(t).then(function(){cb.textContent="Copiado";},sel);}catch(e){sel();}
+  });
+
+  // vídeos: botão de play grande, um vídeo por vez
+  var vids=[].slice.call(document.querySelectorAll(".media video"));
+  document.querySelectorAll(".media").forEach(function(m){
+    var v=m.querySelector("video"),b=m.querySelector(".play");
+    b.addEventListener("click",function(){ v.play(); });
+    v.addEventListener("play",function(){ b.hidden=true; vids.forEach(function(o){ if(o!==v) o.pause(); }); });
+    v.addEventListener("pause",function(){ if(v.currentTime===0||v.ended) b.hidden=false; });
+    v.addEventListener("ended",function(){ b.hidden=false; });
+  });
+
+  // galeria
+  var imgs=[].slice.call(document.querySelectorAll("#gallery img")),lb=document.getElementById("lb"),li=document.getElementById("lbImg"),cur=0,last=null;
+  function show(i){cur=(i+imgs.length)%imgs.length;li.src=imgs[cur].src;li.alt=imgs[cur].alt;}
+  document.querySelectorAll("#gallery button").forEach(function(b){b.addEventListener("click",function(){last=b;show(+b.dataset.i);lb.hidden=false;document.getElementById("lbX").focus();});});
+  function close(){lb.hidden=true;if(last)last.focus();}
+  document.getElementById("lbX").onclick=close;
+  document.getElementById("lbP").onclick=function(){show(cur-1);};
+  document.getElementById("lbN").onclick=function(){show(cur+1);};
+  lb.addEventListener("click",function(e){if(e.target===lb)close();});
+  document.addEventListener("keydown",function(e){if(lb.hidden)return;if(e.key==="Escape")close();if(e.key==="ArrowLeft")show(cur-1);if(e.key==="ArrowRight")show(cur+1);});
+
+  // ondas de linhas (identidade HAJA)
+  var reduce=window.matchMedia&&matchMedia("(prefers-reduced-motion: reduce)").matches;
+  (function(){
+    var c=document.getElementById("waves");if(!c)return;var x=c.getContext("2d"),w,h,t=0,dpr=Math.min(window.devicePixelRatio||1,2);
+    function size(){w=c.clientWidth;h=c.clientHeight;c.width=w*dpr;c.height=h*dpr;x.setTransform(dpr,0,0,dpr,0,0);}
+    size();addEventListener("resize",size);
+    function draw(){x.clearRect(0,0,w,h);for(var k=0;k<34;k++){x.beginPath();var base=h*.35+k*5;for(var px=0;px<=w;px+=12){var y=base+Math.sin(px*.0042+t+k*.09)*30+Math.sin(px*.0011-t*.6+k*.05)*42;px===0?x.moveTo(px,y):x.lineTo(px,y);}x.strokeStyle="rgba(243,239,232,"+(.03+k*.0035)+")";x.lineWidth=1;x.stroke();}t+=.004;if(!reduce)requestAnimationFrame(draw);}
+    draw();
+  })();
+
+  if(!reduce){
+    document.documentElement.classList.add("js");
+    var els=[].slice.call(document.querySelectorAll(".rv"));
+    if("IntersectionObserver" in window){
+      var vh=innerHeight;
+      els.forEach(function(el){ if(el.getBoundingClientRect().top>vh) el.classList.add("pre"); });
+      var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.remove("pre");io.unobserve(e.target);}});},{threshold:.1});
+      els.forEach(function(el){io.observe(el);});
+    }
+    var bar=document.getElementById("progress"),tk=false;
+    addEventListener("scroll",function(){if(tk)return;tk=true;requestAnimationFrame(function(){var d=document.documentElement;bar.style.transform="scaleY("+Math.max(0,Math.min(1,d.scrollTop/((d.scrollHeight-d.clientHeight)||1)))+")";tk=false;});},{passive:true});
+  }
+})();
+</script>
+
+</body>
+</html>
